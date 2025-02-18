@@ -11,11 +11,7 @@ print(settings.database_password)
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",  # If frontend is running locally
-    "http://127.0.0.1:3000",  # Also allow 127.0.0.1
-    "https://www.google.com"  # Only if you expect Google to call your API
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
